@@ -7,10 +7,10 @@ var charCollectionThree = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0!@#$%^&*_-+123456789";
 var charCollectionFour = "abcdefghijklmnopqrstuvwxxyz!@#$%^&*_-+0123456789";
 var charCollectionFive = "abcdefghijklmnopqrstuvwxxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*_-+";
 
-while (passwordLength < 8 || passwordLength > 128 || passwordLength === "") { 
+while (passwordLength < 8 && passwordLength > 128 && passwordLength === ""); { 
   passwordLength = prompt("Please choose a valid length: Choose a length between 8 and 128")
 }
-if (passwordLength < 128 && passwordLength > 8) {
+if (passwordLength < 128 && passwordLength > 8); {
   var chooseSpecialCharacters = confirm("Do you want special characters?");
   var chooseLowercase = confirm("Do you want lowercase letters?");
   var chooseUppercase = confirm("Do you want uppercase letters?");
