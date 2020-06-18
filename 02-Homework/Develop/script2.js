@@ -3,6 +3,9 @@ var generateBtn = document.querySelector("#generate");
 var password = "";
 var charCollection = "abcdefghijklmnopqrstuvwxxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*_-+0123456789";
 var charCollectionTwo = "abcdefghijklmnopqrstuvwxxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+var charCollectionThree = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0!@#$%^&*_-+123456789";
+var charCollectionFour = "abcdefghijklmnopqrstuvwxxyz!@#$%^&*_-+0123456789";
+var charCollectionFive = "abcdefghijklmnopqrstuvwxxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*_-+";
 
 while (passwordLength < 8 || passwordLength > 128 || passwordLength === "") { 
   passwordLength = prompt("Please choose a valid length: Choose a length between 8 and 128")
@@ -21,7 +24,22 @@ if (chooseSpecialCharacters === true && chooseLowercase === true && chooseUpperc
 
 if (chooseSpecialCharacters !== true && chooseLowercase === true && chooseUppercase === true && chooseNumbers === true){
   for (var i = 0; i < passwordLength; i++) 
-  password += charCollection[Math.floor(Math.random() * charCollectionTwo.length)];
+  password += charCollectionTwo[Math.floor(Math.random() * charCollectionTwo.length)];
+}
+
+if (chooseSpecialCharacters === true && chooseLowercase !== true && chooseUppercase === true && chooseNumbers === true){
+  for (var i = 0; i < passwordLength; i++) 
+  password += charCollectionThree[Math.floor(Math.random() * charCollectionThree.length)];
+}
+
+if (chooseSpecialCharacters === true && chooseLowercase === true && chooseUppercase !== true && chooseNumbers === true){
+  for (var i = 0; i < passwordLength; i++) 
+  password += charCollectionFour[Math.floor(Math.random() * charCollectionFour.length)];
+}
+
+if (chooseSpecialCharacters === true && chooseLowercase === true && chooseUppercase === true && chooseNumbers !== true){
+  for (var i = 0; i < passwordLength; i++) 
+  password += charCollectionFive[Math.floor(Math.random() * charCollectionFive.length)];
 }
 
 // Assignment Code
