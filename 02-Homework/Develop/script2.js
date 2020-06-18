@@ -112,11 +112,18 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+  confirm("You want another password");
+  generatePassword();
+  // if user wants another password, set the .value of document.querySelector("#password") === '' and then generatePassword()
+//else alert("Here is your password") then return password.
 }
 
 writePassword();
 
-// Assignment Code
+// function reset(){
+//   passwordText.value = ""
+// }
 
-// Write password to the #password input
-
+// //window.addEventListener("click", function(){
+//   document.getElementById("#password").innerHTML
+// });
