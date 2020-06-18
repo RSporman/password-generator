@@ -107,16 +107,16 @@ function generatePassword(){
 }
 
 
-
-
-// Assignment Code
-
-// Write password to the #password input
 function writePassword() {
+  generateBtn.addEventListener('click', generatePassword);
   var password = generatePassword();
-  console.log(password);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
 writePassword();
+
+// Assignment Code
+
+// Write password to the #password input
+
