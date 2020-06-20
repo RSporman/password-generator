@@ -16,6 +16,7 @@ var charCollectionTwelve = "abcdefghijklmnopqrstuvwxxyz";
 var charCollectionThirteen = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var charCollectionFourteen = "!@#$%^&*_-+";
 var charCollectionFifteen = "0123456789";
+var passwordText = document.querySelector("#password");
 
 function generatePassword(){
   while (passwordLength < 8 && passwordLength > 128 && passwordLength === ""); {
@@ -102,23 +103,25 @@ function generatePassword(){
     for (var i = 0; i < passwordLength; i++)
       password += charCollectionFifteen[Math.floor(Math.random() * charCollectionFifteen.length)];
   }
-
+  passwordText.value = '';
+  passwordText.innerHTML= '';
+  
     return password
 }
 
 
 function writePassword() {
-  generateBtn.addEventListener('click', generatePassword);
+ // generateBtn.addEventListener('click', generatePassword);
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+ // var passwordText = document.querySelector("#password");
   passwordText.value = password;
   confirm("You want another password");
-  generatePassword();
+  //generatePassword();
   // if user wants another password, set the .value of document.querySelector("#password") === '' and then generatePassword()
 //else alert("Here is your password") then return password.
 }
-
-writePassword();
+generateBtn.addEventListener('click', writePassword);
+//writePassword();
 
 // function reset(){
 //   passwordText.value = ""
