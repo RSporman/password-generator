@@ -33,11 +33,13 @@ function generatePassword() {
   var password = "";
 
   while (passwordLength < 8 && passwordLength > 128 && passwordLength === "");
-  {
+ {
     passwordLength = prompt(
       "Please choose a valid length: Choose a length between 8 and 128"
-    );
+    ); 
   }
+  
+
   if (passwordLength < 128 && passwordLength > 8);
   {
     var chooseSpecialCharacters = confirm("Do you want special characters?");
@@ -45,6 +47,7 @@ function generatePassword() {
     var chooseUppercase = confirm("Do you want uppercase letters?");
     var chooseNumbers = confirm("Do you want numbers?");
   }
+  
 
   if (
     chooseSpecialCharacters === true &&
